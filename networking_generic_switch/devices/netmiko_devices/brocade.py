@@ -26,11 +26,11 @@ class BrocadeFastiron(netmiko_devices.NetmikoSwitch):
         )
 
         PLUG_PORT_TO_NETWORK = (
-            'interface {port}',
-            'switchport access vlan {segmentation_id}',
+            'vlan {segmentation_id}',
+            'untagged ethernet {network_id}',
         )
 
         DELETE_PORT = (
-            'interface {port}',
-            'no switchport access vlan {segmentation_id}'
+            'vlan {segmentation_id}',
+            'no untagged ethernet {network_id}',
         )
